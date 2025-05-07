@@ -1,85 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
-    <title>MicroSearch</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CDN Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Iconos de bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/gen.svg" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&family=Playball&display=swap"
+    rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <title>Abigail Castro Ramos</title>
 </head>
+
 <body>
-    <!--Asi ouedes agregar notitas y comentarios-->
-    <!-- estos simbolos se agregan con ctrl + } -->
-    <!--Si escirbes la palabra Lorem te aparece una frase en latin para poder hacer una revision del texto  -->
-    
-    <!-- etiqueta para agregar menu -->
-    <nav class="nav">
-        <a href="#definicion">Definición</a>
-        <a href="#medios">Medios de cultivo</a>
-        <a href="#clasificacion">Clasificación</a>
-    </nav>
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <!-- Icono -->
+      <i class="nombre bi bi-rocket-takeoff p-3"></i>
+      <span class="nombre fs-4">Abi Castro Ramos</span>
+    </a>
 
-    <!-- En el menu ver ajuste de palabra puedes hacer el ajuste de texto -->
-    <h1>MicroSearch</h1>
-
-    <p>La guia ilustrada de microbiologia en la web</p>
-    <!-- para no tener que descargar la imagen puedes agregar la etiqueta de imagen y copiar la "direccion de imagen" -->
-    <div class="imagen">
-        <img class="portada"
-            src="data:image/jpeg;base64,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"
-            alt="portada">
+    <ul class="nav nav-pills">
+      <li class="nav-item boton-perfil"><a target="_blank" id="boton-perfil" href="https://www.linkedin.com/in/abigailcastro-ramos/" class="nav-link active perfil"
+          aria-current="page">Aby Castro</a></li>
+      <li class="nav-item"><a href="#habilidades" class="nav-link">Habilidades</a></li>
+      <li class="nav-item"><a href="#proyectos" class="nav-link">Proyectos</a></li>
+      <li class="nav-item"><a href="#colaboraciones" class="nav-link">Colaboraciones</a></li>
+      <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+    </ul>
+  </header>
+  <main>
+    <!-- Hero -->
+    <div class="hero">
+      <div class="px-4 py-5 my-5 text-center">
+        <img class="d-block mx-auto mb-4 rounded-circle" src="assets/perfil.jpeg" alt="" width="300">
+        <h1 class="display-5 fw-bold text-body-emphasis">Abi Castro Ramos</h1>
+        <!-- Texto Type writer -->
+        <h2 id="app"></h2>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">Cientifica apasionada y comprometida con el desarrollo y avances tecnologicos en el área de a salud, con una sólida formación en microbiología, biología molecular y biotecnología vegetal. Mi curiosidad innata y mi dedicación me impulsan a desarrollar habilidades y adquirir nuevos conocimientos en diversas áreas. Mi objetivo es compartir los desarrollos y conocimientos cientificos de una forma comprensible y divertida para que la ciencia sea accesible para todos y pueda inspirar a las mujeres a unirse al área STEM. </p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"><a target="_blank" href="https://drive.google.com/file/d/1w98BqFDVIoukaVlfY9jSMm-dWt3btoTO/view?usp=sharing">
+            <button id="boton-cv" type="button" class="btn btn-lg px-4 gap-3">Curriculum</button></a>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <br>
-    <br>
-    <div class="nav">
-        <a id="definicion" href="https://accessmedicina.mhmedical.com/content.aspx?bookid=1837&sectionid=128955502"
-            target="_blank">¿Qué es la microbiologia?</a>
+    <!-- Habilidades -->
+    <div class="caja-habilidades">
+      <div class="habilidades container px-4 py-5" id="habilidades">
+        <h2 class="pb-2 border-bottom">Habilidades</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+          <div class="col d-flex align-items-start">
+            <div
+              class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-1 flex-shrink-0 me-3">
+              <i class="bi bi-search-heart px-1"></i>
+              <!-- <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg> -->
+            </div>
+            <div>
+              <h3 class="fs-2 text-body-emphasis">STEM</h3>
+              <p>Instructora en Tecnolochicas México, imparto cursos de diseño de sitios web para acercar a las niñas al mundo tecnologico e inspirarlas a formar parte del área STEM </p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div
+              class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-1 flex-shrink-0 me-3">
+              <i class="bi bi-laptop px-1"></i>
+            </div>
+            <div>
+              <h3 class="fs-2 text-body-emphasis">Desarrollo web</h3>
+              <p>He creado sitios web responsivos aplicando los conocimientos obtenidos durante el bootcamp de
+                Tecnolochicas PRO.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div
+              class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-1 flex-shrink-0 me-3">
+              <i class="bi bi-journal-richtext px-1"></i>
+            </div>
+            <div>
+              <h3 class="fs-2 text-body-emphasis">Estudiante</h3>
+              <p>Estuadiante de Biotecnología, con habilidades en biologia molecular, microbiología, biotecnología vegetal y ambiental.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-<br>
-<br>
-<!-- como referenciar otras paginas -->
-<h2 class="galeria">Mira aqui la galeria</h2>
-<nav class="nav">
-    <a href="galeria.html">Galeria</a>
-</nav>
-    <!-- para imagenes de Pinterest o Instagram se debe entrar al sitio o guardarla en el ordenador en la carpeta que estamos trabajando -->
-    <br>
-    <br>
-    <div class="imagen">
-        <img class="placa" src="placas.jpg" alt="placa">
+
+    <!-- Proyectos -->
+    <div id="proyectos" class="proyectos container mt-5">
+      <h2 class="pb-2 border-bottom">Proyectos</h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <!-- imagen -->
+            <img class="bd-placeholder-img card-img-top" src="assets/primersitio.png" alt="mi primer sitio">
+            <div class="card-body">
+              <p class="card-text">Mi primer Sitio web</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary btn-proyecto"><a target="_blank"
+                      href="https://mi-primer-sitio-web-seven.vercel.app/">Ver</a></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary btn-proyecto"><a target="_blank"
+                      href="https://github.com/AbyCastro/Mi-primer-sitio-web">Github</a></button>
+                </div>
+                <small class="text-body-secondary">HTML y CSS</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" src="assets/pinterest.png" alt="clon de pinterest">
+            <div class="card-body">
+              <p class="card-text">Clon de Pinterest</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary btn-proyecto"><a target="_blank"
+                      href="https://pinterest-clon-ruby.vercel.app/">Ver</a></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary btn-proyecto"><a target="_blank"
+                      href="https://github.com/AbyCastro/pinterest-clon">Github</a></button>
+                </div>
+                <small class="text-body-secondary">HTML y CSS</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" src="assets/tareas.png" alt="">
+            <div class="card-body">
+              <p class="card-text">App Lista de tareas</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary btn-proyecto"><a target="_blank" href="https://block-tareas-seven.vercel.app/">Ver</a></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary btn-proyecto"><a target="_blank" href="https://github.com/AbyCastro/BlockTareas">GitHub</a></button>
+                </div>
+                <small class="text-body-secondary">HTML, CSS y JS</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" src="assets/anca.png" alt="anca">
+            <div class="card-body">
+              <p class="card-text">Klebsiella pneumoniae en el río Atoyac</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary btn-proyecto"><a target="_blank" href="https://drive.google.com/file/d/1Wg4xEaDM1ilnT6lsz-a2K0WzcITz8OeN/view?usp=sharing">Cartel</a> </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary btn-proyecto"><a target="_blank" href="https://drive.google.com/file/d/1803rLhF89TsJCeDZ60XYLjjELvrVIhG3/view?usp=sharing">Resumen</a></button>
+                </div>
+                <small class="text-body-secondary">Investigación cientifica</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" src="assets/colombia.png" alt="">
+            <div class="card-body">
+              <p class="card-text">Estancia Medellin, Colombia</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary btn-proyecto"><a target="_blank" href="https://drive.google.com/file/d/1TnxGlZIC0hj4Q7ndViX61yk4Y7te03xg/view?usp=sharing">Resumen</a></button>
+                </div>
+                <small class="text-body-secondary">Investigación cientifica</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <br>
-    <!-- etiqueta para agregar links -->
-    <!-- al agregar target="_blank" y se abre el link en una ventana diferente-->
+
+    <!-- Carrusel -->
+    <div id="colaboraciones" class="testimonios container mt-5">
+      <h2 class="pb-2 border-bottom">Colaboraciones</h2>
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex justify-content-center">
+              <!-- Card -->
+              <div class="card border-0" style="width: 18rem;">
+                <img src="assets/her.jpg" class="card-img-top rounded-circle" alt="foto testimonio">
+                <h5 class="card-title text-center">Marcela Mora</h5>
+                <h6 class="card-subtitle text-center mb-2 text-body-secondary">Biotecnologa</h6>
+                <div class="card-body">
+                  <p class="card-text">Tuve la oportunidad de trabajar con Abigail Castro en Colombia durante su pasantía DELFIN, donde demostró ser una persona comprometida con una gran capacidad para resolver problemas y trabajar en equipo. Su actitud siempre fue positiva y colaborativa, lo que contribuyó significativamente a cumplir con los objetivos del proyecto " Cultivo In vitro para la micropropagación de plantas Dioicas". Sin duda, considero que Aby es un excelente profesional, y fue un placer compartir esta experiencia laboral y académica con ella.</p>
+                </div>
+              </div>
+              <!-- Fin Card -->
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <!-- Card -->
+              <div class="card border-0" style="width: 18rem;">
+                <img src="assets/her.jpg" class="card-img-top rounded-circle" alt="...">
+                <h5 class="card-title text-center">Ingrid Vázquez</h5>
+                <h6 class="card-subtitle text-center mb-2 text-body-secondary">M.C.</h6>
+                <div class="card-body">
+                  <p class="card-text">Trabajo con Abigail Castro desde hace año y medio en el laboratorio de Patogenicidad Microbiana del Centro de Investigaciones Microbiológicas del ICUAP, durante todo este tiempo me he dado cuenta de que es una comprometida y responsable con las labores que ha desempeñado en el laboratorio, siendo puntual a los llamados de apoyo que le ha solicitado su directora de tesis. Cuenta con las capacidades para desempeñar cualquier tarea que se le designe, siempre esta dispuesta a apoyar y a guiar a los nuevos compañeros con las labores que se les encomiendan.</p>
+                </div>
+              </div>
+              <!-- Fin Card -->
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <!-- Card -->
+              <div class="card border-0" style="width: 18rem;">
+                <img src="assets/him.jpg" class="card-img-top rounded-circle" alt="...">
+                <h5 class="card-title text-center">Etzael Mendoza</h5>
+                <h6 class="card-subtitle text-center mb-2 text-body-secondary">Biotecnologo</h6>
+                <div class="card-body">
+                  <p class="card-text">Abigail Castro y yo estudiamos juntos en la universidad, compartimos muchos
+                    semestres en el laboratorio. Siempre destaco por su responsabilidad además de sus buenas ideas para
+                    los proyectos aparte de manejar muy bien el equipo de laboratorio. Me gustaba trabajar con ella
+                    porque siempre aportaba mucho y tenía una gran actitud. Gracias a eso, no solo formamos un buen
+                    equipo, sino también una gran amistad.</p>
+                </div>
+              </div>
+              <!-- Fin Card -->
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Contacto -->
+    <div id="contacto" class="px-4 py-5 my-5 text-center">
+      <i class="d-block mx-auto mb-4 fs-1 bi bi-envelope-at-fill"></i>
+
+      <h1 class="display-5 fw-bold text-body-emphasis">¡Contáctame!</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Contáctame para iniciar un proyecto de investigación cientifica o desarrollo web</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a href="mailto:abigailcastroramos@gmail.com">
+            <button id="btn-contacto" type="button" class="btn btn-primary btn-lg px-4 gap-3">Enviar correo</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a target="_blank" href="https://www.linkedin.com/in/abigailcastro-ramos/"
+          class="nav-link px-2"><i class="fs-2 bi bi-linkedin"></i></a></li>
+      <li class="nav-item"><a target="_blank" href="https://github.com/AbyCastro"
+          class="nav-link px-2"><i class="fs-2 bi bi-github"></i></a></li>
+    </ul>
+    <p class="text-center">Creado por Abi Castro Ramos en el Bootcamp de <a target="_blank"
+        href="https://tecnolochicas.mx/">TecnolochicasPro</a> </p>
+  </footer>
 
 
-    <!-- etiquetas para listas -->
-    <!-- listas ordenadas -->
-    <div class="medios">
-        <H2 id="medios">Medios de cultivo</H2>
-        <ol>
-            <li>MacConkey</li>
-            <li>TSA</li>
-            <li>LB</li>
-            <li>Cromoagar</li>
-            <li>Cetrimida</li>
-        </ol>
-    </div>
-    <!-- lista desordenada -->
-    <div class="clasificacion">
-        <h2 id="clasificacion">Clasificasión de las bacterias</h2>
-        <ul>
-            <li>mesofilicas</li>
-            <li>psicrofilas</li>
-            <li>termofilas</li>
-            <li>extremofilas</li>
-        </ul>
-    </div>
-    <p>Mi primer sitio web, hecho con amor por Aby en el Bootcamp de Tecnolochicas Pro</p>
+
+  <!-- bootstarp -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <!-- CDN Type writer -->
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <!-- Main js -->
+  <script src="main.js"></script>
 
 </body>
 

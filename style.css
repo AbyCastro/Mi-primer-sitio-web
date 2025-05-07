@@ -1,54 +1,87 @@
-body{
-    background: rgb(252,231,210);
-    background: linear-gradient(0deg, rgba(252,231,210,1) 0%, rgba(192,206,170,1) 100%);
-    font-family: "Playball", cursive;
-    font-size: 20px;
+*{
+    font-family: "IM Fell DW Pica", serif;
+    font-style: italic;
 }
 
-p{
-    text-align: center;
-    font-size: 25px;
+header{
+    background-color: #e1918e;
 }
 
-h1{
-    text-align: center;
-    font-size: 90px;
-    color: darkgreen;
+.nombre{
+    color: white;
 }
 
-h2{
-    text-align: center;
-    font-size: 45px;
+.nav-item a{
+    color: white;
 }
 
-/* asi se agregan comentarios, se activa con ctrl + } */
-.portada{
-    width: 1250px;
-    border-radius: 50px;
+.nav-link{
+    color: #fee9a6;
 }
 
-.placa{
-    width: 700px;
-    border-radius: 100px;
+#boton-perfil{
+    background-color: #e0c4ae;
 }
 
-.medios{
-    color:darkcyan ;
+.nav-item a:hover{
+    color: gainsboro;
 }
 
-.clasificacion{
-    color: darkgoldenrod;
+#app{
+    color: #e15e6e;
 }
 
-.nav{
-    text-align: center;
-    font-size: 30px;
+#boton-cv{
+    background-color: #e0c4ae;
+    color: black;
+    text-decoration: none;
 }
 
-.imagen{
-    text-align: center;
+#boton-cv a:hover{
+    background-color: #e15e6e;
 }
 
-.galeria{
-    color: darkolivegreen;
+.caja-habilidades{
+    background-color: #c3e6d4;
 }
+
+.btn-proyecto{
+    background-color: #e1918e;
+}
+
+.btn-proyecto a{
+    text-decoration: none;
+    color: #f4f0e5;
+}
+
+.card .card-title{
+color: #e15e6e;
+}
+
+#contacto{
+    background-color: #e0c4ae;
+}
+
+#btn-contacto{
+    background-color: #e15e6e;
+    border: #e15e6e;
+}
+
+#btn-contacto:hover{
+    background-color: #c3e6d4;
+}
+
+footer li a i{
+    color: #e15e6e;
+}
+
+footer p{
+    color: grey;
+}
+
+footer p a{
+    text-decoration: none;
+    color: #e15e6e;
+}
+
+/* https://paletadecolores.com.mx/paleta/c3e6d4/f4f0e5/e0c4ae/e1918e/e15e6e/ */
